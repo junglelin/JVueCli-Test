@@ -1,0 +1,37 @@
+// Mixins
+// --------------------------
+
+@mixin cc-icon
+    display: inline-block
+    font: normal normal normal #{$cc-font-size-base}/#{$cc-line-height-base} FontAwesome
+    font-size: inherit
+    text-rendering: auto
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+@mixin cc-icon-rotate($degrees, $rotation)
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation})"
+    -webkit-transform: rotate($degrees)
+    -ms-transform: rotate($degrees)
+    transform: rotate($degrees)
+
+@mixin cc-icon-flip($horiz, $vert, $rotation)
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation}, mirror=1)"
+    -webkit-transform: scale($horiz, $vert)
+    -ms-transform: scale($horiz, $vert)
+    transform: scale($horiz, $vert)
+
+@mixin sr-only
+    position: fixed
+    top: 0
+    left: -200px
+    margin: 4px 0px
+    padding: 7px
+    border-radius: 0 5px 5px 0
+    background: white
+    z-index: 999
+    text-decoration: none
+
+@mixin sr-only-focusable
+    &:active, &:focus
+        left: 0

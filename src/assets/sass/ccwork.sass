@@ -1,0 +1,48 @@
+﻿@charset "utf-8"
+@import variables
+@import mixins/background
+@import mixins/border-radius
+@import mixins/button
+@import mixins/clearfix
+@import mixins/display
+@import mixins/float
+@import mixins/font-ccwork
+@import mixins/hover
+@import mixins/image
+@import mixins/position
+@import mixins/rwd
+@import mixins/text
+@import mixins/visibility
+@import utilities
+@import extend
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap')
+//notosans 日文字體檔
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap')
+
+@import utilities/font-face
+@import utilities/layout
+@import utilities/groove
+@import utilities/typography
+@import utilities/border-radius
+@import utilities/border
+@import utilities/options
+@import utilities/underline-color
+@import utilities/print
+
+//無障礙 全屏noscript
+.noscript
+    position: fixed
+    z-index: 999
+    color: black
+    width: 100%
+    height: 100vh
+    background: rgba(0, 0, 0, 0.85)
+    top: 0
+    font-size: 2rem
+    color: white
+    display: flex
+    word-break: keep-all
+    align-items: center
+    justify-content: center
+

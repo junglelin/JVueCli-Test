@@ -1,0 +1,96 @@
+$main: #dd2e5d
+
+.card-mainVision[data-style="2"]
+    .wrapper
+        // padding-top: 57.79%
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        position: relative
+
+        .swiper-container
+            overflow: hidden
+            position: relative
+
+            .swiper-wrapper
+                .swiper-slide.banner-content 
+                    // padding-top: 54.79%
+                    padding: 300px 200px
+                    background-size: cover
+                    background-position: center
+                    background-repeat: no-repeat
+                    
+                    +breakpoint(pad-landscape)
+                        padding: 300px 100px
+
+                    +breakpoint(pad-portrait)
+                        padding: 250px 50px
+
+                    +breakpoint(mobile-landscape)
+                        padding: 210px 20px
+
+                    .title
+                        font-size: 4.8rem
+                        font-weight: bold
+                        letter-spacing: 5.8px
+                        color: #ffffff
+                        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)
+                        text-align: center
+                        margin-bottom: 12px
+
+                    p
+                        font-size: 2.1rem
+                        font-weight: 500
+                        letter-spacing: 0.87px
+                        color: #ffffff
+                        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)
+                        text-align: center
+                        margin-bottom: 35px
+
+                    .join-btn
+                        font-size: 1.6rem
+                        font-weight: 500
+                        letter-spacing: 2px
+                        color: #ffffff
+                        padding: 10px 40px
+                        background-color: $main
+                        display: block
+                        width: 74px
+                        text-align: center
+                        margin: auto
+                        border-radius: 25px
+
+            .scroll
+                transform: rotate(90deg)
+                position: absolute
+                left: 50px
+                bottom: 100px
+                z-index: 998
+                animation: downAndUp 2s linear infinite
+
+                +breakpoint(pad-portrait)
+                    left: 20px
+
+                +breakpoint(mobile-landscape)
+                    left: 0
+
+                span
+                    font-size: 1.6rem
+                    letter-spacing: 0.67px
+                    color: #ffffff
+                    font-family: 'Roboto', sans-serif
+
+                img
+                    transform: rotate(270deg)
+                    margin-left: 10px
+
+@keyframes downAndUp
+    0%
+        transform: rotate(90deg) translateX(0)
+
+    50%
+        transform: rotate(90deg) translateX(7px)
+        
+    100%
+        transform: rotate(90deg) translateX(0)
+        

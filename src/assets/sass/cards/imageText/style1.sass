@@ -1,0 +1,68 @@
+$main-red: #dd2e5d
+// 合作夥伴card
+.card-imageText_aecc
+	.card-text
+		padding: 20px 0 0
+		color: #000000
+		font-size: 1.2rem
+		line-height: 1.2rem
+
+		.card-text-name
+			position: relative
+			color: #000000
+			margin-bottom: 12px
+
+			&:after
+				content: ''
+				position: absolute
+				top: -20px
+				left: 50%
+				height: 3px
+				width: 30px
+				background: #000000
+				transform: translateX(-50%)
+
+			&:empty
+				min-height: 12px
+
+	.card-img
+		.img-box
+			padding: 15% 10%
+			background: transparent
+
+			.img-info
+				margin-bottom: 20px 
+
+				img
+					width: 100%
+
+				picture
+					&.desktop
+						+breakpoint(pad-portrait)
+							display: none
+
+					&.mobile
+						display: none
+
+						+breakpoint(pad-portrait)
+							display: block
+
+		&.original
+			> img,
+			> a
+				margin: 0 15px
+				width: calc(100% - 30px)
+				height: calc(100% - 30px)
+				background: #f2f2f2
+
+				&:hover,
+				&:focus
+					background: $main-red
+
+					.card-text-name
+						color: #ffffff
+
+						&:after
+							background: #ffffff
+
+// 合作夥伴 -- end 

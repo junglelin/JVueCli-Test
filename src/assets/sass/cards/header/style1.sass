@@ -1,0 +1,406 @@
+%menu-normal
+    max-height: 0
+    visibility: hidden
+    opacity: 0
+    height: auto
+    top: 120%
+    transition: all 0.4s ease-in-out 0.25s
+
+%menu-show
+    max-height: initial
+    visibility: visible
+    opacity: 1
+    top: 100%
+
+$main: #dd2e5d
+
+.card-header[data-style="1"]
+    width: 100%
+    display: flex
+    align-items: center
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 999
+    transition: all .3s
+
+    &.header--shrink
+        background-color: rgba(0, 0, 0, 0.5)
+
+        .wrapper
+            padding-top: 10px
+
+            .logo
+                &.normal
+                    display: none
+
+                    +breakpoint(mobile-landscape)
+                        display: none
+
+                &.shrink
+                    display: block
+
+                    +breakpoint(mobile-landscape)
+                        display: none
+
+    .wrapper 
+        width: 1440px
+        max-width: calc(100% - 40px)
+        margin: 0 auto
+        padding-top: 35px
+        transition: all .3s
+
+        +breakpoint(pad-portrait)
+            padding-top: 0
+            padding: 20px 0px
+            align-items: center
+
+        +breakpoint(mobile)
+            display: flex !important
+
+        .logo
+            display: block
+            width: 96px
+            height: 115px
+            margin-left: 82px
+            z-index: 9999
+            background-size: cover
+            background-position: center
+            background-repeat: no-repeat
+            transition: all .3s
+
+            +breakpoint(pad-landscape)
+                margin-left: 0
+
+            +breakpoint(mobile-landscape)
+                display: none
+
+            &.shrink,
+            &.mobile
+                display: none
+
+            &.mobile
+                +breakpoint(mobile-landscape)
+                    display: block
+
+        .header-content
+            display: flex
+            flex-direction: column
+            margin-left: auto
+            margin-right: 70px
+
+            +breakpoint(pad-landscape)
+                margin-right: 0
+
+            .nav
+                display: flex
+                align-items: center
+                justify-content: center
+                padding: 7px 14px
+                background-color: #ffffff
+                border-radius: 26px
+                margin-bottom: 30px
+
+                ul
+                    margin-left: 0
+                    list-style: none
+                    display: flex
+                    align-items: center
+
+                    li
+                        margin-right: 20px
+                            
+                        a
+                            font-size: 1.2rem
+                            font-weight: 500
+                            color: $main
+                            position: relative
+
+                            &::before
+                                content: ''
+                                position: absolute
+                                bottom: -3px
+                                left: 0
+                                width: 100%
+                                height: 1px
+                                background-color: $main
+                                opacity: 0
+                                transition: all .3s
+
+                                +breakpoint(pad-portrait)
+                                    display: none
+                            
+                            &:hover,
+                            &:focus,
+                            &.active
+                                &::before
+                                    opacity: 1
+
+                .nav-search,
+                .nav-video,
+                .nav-cart
+                    a
+                        display: inline-block
+                        color: $main
+                        margin-right: 20px
+
+                .nav-cart
+                    a
+                        margin-right: 0
+
+            .menu
+                display: flex
+                align-items: center
+
+                ul
+                    margin-right: 20px
+
+                    li
+                        list-style: none
+
+                        a
+                            font-size: 1.8rem
+                            font-weight: 500
+                            letter-spacing: 1.65px
+                            color: #ffffff
+
+                .menu-button
+                    font-size: 1.2rem
+                    background-color: $main
+                    color: #ffffff
+                    border-radius: 25px
+                    padding: 2px 13px
+                    display: flex
+                    align-items: center
+
+                    i
+                        font-size: 1.5rem
+                        margin-right: 3px
+
+            .mobile-menu
+                position: absolute
+                top: 0
+                right: 0
+                width: 100%
+
+                .nav.top
+                    position: absolute
+                    top: 0
+                    right: 0
+                    width: 100%
+                    padding: 0 20px
+                    margin-top: 0
+                    border-bottom: 1px solid #efefef
+                    z-index: 1005
+                    background-color: $white
+                    opacity: 0
+                    visibility: hidden
+                    height: auto
+                    @extend %border-box
+                    @extend %transition-btn
+
+                    +breakpoint(pad-portrait)
+                        opacity: 1
+                        visibility: visible
+
+
+                    > div
+                        > ul
+                            a
+                                padding: 12px 15px
+
+                    .nav-menu
+                        li
+                            padding: 0
+
+                    .nav-dropdown.lang
+                        vertical-align: middle
+
+                .menu-main
+                    opacity: 0
+                    visibility: hidden
+                    overflow: hidden
+                    z-index: 1000
+                    position: absolute
+                    top: 0
+                    right: 0
+                    width: 100%
+                    height: 0
+                    -webkit-overflow-scrolling: touch
+                    background-color: $white
+                    @extend %transition-btn
+
+                    .main.top
+                        text-align: center
+                        font-size: 3.0rem
+                        margin-top: 155px
+                        border-top: 1px solid #efefef
+                        border-bottom: 1px solid #efefef
+                        @extend %transition-btn
+
+                        .nav-social
+                            margin-left: 0
+
+                        li
+                            display: inline-block
+                            padding: 0 10px
+
+                    .nav, .menu
+                        float: right
+                        margin: 0
+                        padding: 40px 0
+                        @extend %border-box
+
+                    .nav
+                        width: 40%
+
+                        +breakpoint(pad-portrait)
+                            display: block
+
+                    .menu
+                        width: 60%
+                        border-right: 1px solid #efefef
+
+                        +breakpoint(pad-portrait)
+                            display: block
+
+                        .main-menu
+                            margin: 0
+                            padding: 0
+                            width: 100%
+                            position: static
+
+                            > li::after
+                                display: none
+
+                            li,
+                            a
+                                display: block
+                                width: 100%
+                                @extend %border-box
+
+                            li
+                                padding: 0
+
+                                a
+                                    color: $main
+                                    padding: 12px 20px
+                                    white-space: unset
+
+                                .sub-menu
+                                    position: relative
+                                    box-shadow: none
+                                    margin-top: 0
+
+                                    .sub-menu
+                                        left: 0
+
+                    .nav-menu
+                        margin: 0
+                        padding: 0
+                        width: 100%
+                        text-align: left
+
+                        li, a
+                            display: block
+                            width: 100%
+                            @extend %border-box
+
+                        li
+                            padding: 0
+
+                            a
+                                padding: 12px 20px
+                                font-size: 1.6rem
+
+                            .sub-menu
+                                position: relative
+                                box-shadow: none
+                                margin-top: 0
+
+                                .sub-menu
+                                    left: 0
+
+                &.menu-active
+                    .menu-main
+                        opacity: 1
+                        visibility: visible
+                        overflow: auto
+                        height: 100vh
+
+            .hamburger
+                display: none
+                cursor: pointer
+                z-index: 9999
+
+                +breakpoint(pad-portrait)
+                    display: block
+                    width: 39px
+                    height: 23px
+                    position: relative
+
+                &.toggle-active
+                    span
+                        display: none
+
+                    &::before
+                        transform: rotate(45deg) translate(5px, 10px)
+
+                    &::after
+                        transform: rotate(135deg) translate(-5px, 10px)
+
+                span
+                    +breakpoint(pad-portrait)
+                        width: 100%
+                        height: 1px
+                        background: #000000
+                        display: block
+                        position: absolute
+                        top: 50%
+                        left: 50%
+                        transform: translate(-50%, -50%)
+                        transition: all .3s
+
+                &::before
+                    content: ''
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 1px
+                    background-color: #000000
+                    transition: all .3s
+
+                &::after
+                    content: ''
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    width: 100%
+                    height: 1px
+                    background-color: #000000
+                    transition: all .3s
+
+.sub-menu
+    @extend %menu-normal
+
+    +breakpoint(pad-portrait)
+        > li
+            padding-left: 16px !important
+
+    .sub-menu
+        top: 70%
+        left: 95%
+
+.open,
+.focus
+    > .sub-menu
+        @extend %menu-show
+
+        .open,
+        .focus
+            .sub-menu
+                top: 50%
+                left: 95%
+    &.nav-dropdown > ul
+        @extend %menu-show

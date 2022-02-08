@@ -1,0 +1,414 @@
+$main-red: #dd2e5d
+$gray: #6b6b6b
+$darkgray: #494949
+
+.card-footer[data-style="1"]
+    margin-top: 24px
+    font-size: 1.5rem
+    text-align: center
+    position: relative
+    border-top: 1px solid $main-red
+    @extend %transition-btn
+
+    ul, ol, li
+        @extend %reset
+
+    a
+        color: $white
+        margin-right: 5px
+
+        +hover-focus-active
+            opacity: .5
+
+    .footer-social
+        padding: 20px 0
+        position: absolute
+        width: 100%
+        top: -44px
+
+        +breakpoint(pad-portrait)
+            padding-bottom: 0
+
+        i
+            font-size: 3.2rem
+
+        .footer-nav
+            .nav-menu
+                +breakpoint(pad-portrait)
+                    text-align: center
+
+                >li
+                    margin-bottom: 0px
+
+                    >a
+                        margin: 0
+                        padding: 10px 9px 9px 9px
+                        display: inline-block
+                        background: #fff
+                        border: 1px solid $main-red
+                        border-radius: 50%
+                        transition: .3s ease
+
+                        i
+                            color: $main-red
+                            font-size: 2.5rem
+
+                        &:hover
+                            background: $main-red
+                            border: 1px solid $main-red
+                            opacity: 1
+
+                            i
+                                color: #ffffff
+
+    .footer-main
+        width: 1300px
+        max-width: calc(100% - 40px)
+        margin: 0 auto
+        padding: 40px 0px
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+
+        +breakpoint(pad-portrait)
+            display: block
+            padding: 20px 0px
+
+        > .footer-nav
+            flex: 2
+            text-align: left
+
+            .nav-menu
+                +breakpoint(pad-portrait)
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: center
+                    
+                +breakpoint(mobile)
+                    display: flex
+                    flex-wrap: wrap
+                    padding-left: 0
+
+                >li
+
+                    +breakpoint(pad-portrait)
+                        max-width: 25%
+                        flex: 0 0 25%
+                        min-width: auto
+                        max-width: fit-content
+
+                    +breakpoint(mobile-landscape)
+                        display: block
+                        margin: 4px 0px
+
+    .footer-nav.right
+        padding-left: 60px
+        width: auto
+        display: flex
+        align-items: center
+
+        +breakpoint(pad-portrait)
+            padding: 0
+
+    .footer-custom.logo
+        position: relative
+        padding-top: 4%
+        height: 0
+        flex: initial
+        width: 24%
+
+        +breakpoint(pad-portrait)
+            padding-top: 15%
+            width: 35%
+            margin: auto
+
+        .logo
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            display: inline-block
+            background-size: contain
+            background-position: center
+            background-repeat: no-repeat
+            max-width: initial
+
+    .footer-link
+        ul
+            display: flex
+
+            +breakpoint(pad-portrait)
+                justify-content: center
+
+            li
+
+                &:last-child
+                    a:after
+                        display: none
+
+                a
+                    color: $darkgray
+                    font-size: 1.6rem
+                    opacity: 1
+
+                    &:after
+                        content: '|'
+                        margin: 0 10px
+                        position: relative
+                        color: $darkgray !important
+                        pointer-events: none
+
+                    &:hover
+                        content: ''
+                        color: $main-red
+                        opacity: 1
+
+    .footer-custom
+        flex: 1
+        text-align: left
+
+        h3
+            margin-bottom: 10px
+            margin-top: 0px
+            color: $darkgray
+            text-align: left
+            line-height: 1
+            font-size: 1.6rem
+            transition: .3s ease
+                
+            +breakpoint(pad-portrait)
+                text-align: center
+
+        a
+            display: inline-block
+            max-width: 137px
+
+        input
+            border: 1px solid #e46b0a
+            border-left: 25px solid#e46b0a
+            color:#000000
+            padding: 0px 5px
+
+        input[type="text"]:focus:not([readonly])
+            border-color: #a22b0a
+
+        .sub-menu
+            display: flex
+            align-items: center
+            height: 100%
+            width: 100%
+            visibility: visible
+            opacity: 1
+            max-height: initial
+
+            +breakpoint(pad-landscape)
+                flex-wrap: wrap
+
+            li
+                margin-right: 45px
+
+                +breakpoint(pad-portrait)
+                    margin: 0
+                    width: 100%
+                    text-align: center
+
+                &:last-child
+                    margin-right: 0
+
+        ul
+            display: flex
+            justify-content: flex-start
+
+            li
+                color: red
+
+            &:nth-child(1)
+                li
+                    &:not(:last-child)
+                        margin-right: 20px
+                        position: relative
+
+                        &::before
+                            content: ''
+                            position: absolute
+                            top: 50%
+                            right: -10px
+                            transform: translateY(-50%)
+                            width: 1px
+                            height: 65%
+                            background-color: #a3a3a3
+
+            &:nth-child(2)
+                li
+                    padding-top: 20px
+
+                    &::before
+                        display: none
+
+                    &:first-child
+                        width: 31.21%
+                        min-width: 182px
+
+            +breakpoint(pad-portrait)
+                flex-wrap: wrap
+                justify-content: center
+
+            li
+                +breakpoint(pad-portrait)
+                    text-align: center
+                    
+                i
+                    margin-right: 12px
+                    color: $darkgray
+
+                a
+                    display: block
+                    font-size: 1.6rem
+                    font-weight: 500
+                    letter-spacing: 1.33px
+                    color: #494949
+
+                    +breakpoint(pad-portrait)
+                        margin: auto
+
+        .custom-content
+            padding-top: 20px
+
+            ul
+                +breakpoint(pad-portrait)
+                    flex-direction: column
+
+                li
+                    position: initial !important
+                    margin-right: 20px !important
+
+                    +breakpoint(pad-portrait)
+                        margin-right: 0 !important
+                        margin-bottom: 10px
+
+                    &:nth-child(1)
+                        margin-right: 120px !important
+
+                        +breakpoint(pad-portrait)
+                            margin-right: 0 !important
+
+                    &::before
+                        display: none
+
+                    .sub-menu
+                        li
+                            padding-left: 0 !important
+
+    .footer-copyright
+        padding: 10px 0
+        color: #ffffff
+        background: $main-red
+        font-size: 1.2rem
+
+    .footer-nav
+        width: 100%
+        position: relative
+        @extend %transition-btn
+
+        +breakpoint(pad-portrait)
+            z-index: 1
+            font-size: 1.6rem
+
+        ul, ol, li, a
+            @extend %reset
+
+        a
+            white-space: nowrap
+            letter-spacing: 0.5px
+
+        .nav-menu.nav
+            display: inline-table
+            margin-right: 35px
+            width: auto
+            z-index: 9
+
+            &:last-child
+                margin-right: 0
+
+            +breakpoint(zone-base)
+                margin-right: 20px
+            
+        
+        .nav-menu
+            width: 100%
+            display: inline-block
+            line-height: 24px
+            @extend %border-box
+
+            >li
+                >a
+                    margin-right: 5px
+                    margin-bottom: 10px
+                    color: #000
+                    line-height: 1
+                    font-weight: normal
+                    font-size: 1.6rem
+
+            li
+                display: inline-block
+                vertical-align: top
+                text-align: left
+                
+                + li 
+                    padding-left: 30px
+
+                    +breakpoint(pad-portrait)
+                        padding-left: 10px
+                    
+                ul
+                    li
+                        display: block
+                        padding: 5px 0 5px 10px
+                        position: relative
+                        margin-left: 4px
+
+                        &::before
+                            content: "-"
+                            font-size: initial
+                            position: absolute
+                            left: 0
+
+ 
+    span.social 
+        a
+            font-size: 2.5rem
+            padding: 2px
+            display: inline
+            float: right
+
+    .footer-nav.Top
+        padding-bottom: 20px
+
+        .parent
+            .sub-menu 
+                position: absolute
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)
+                z-index: 2
+                visibility: hidden
+                opacity: 0
+                height: auto
+                bottom: 65px
+                transition: all 0.4s ease-in-out 0.25s
+                background: rgba(63, 58, 58, 0.85)
+                padding: 3px 9px
+                z-index: 9
+                
+                .sub-menu
+                    left: calc(100% + 15px)
+                    bottom: -5px
+
+    .footer-nav.Top .open > .sub-menu 
+        visibility: visible
+        opacity: 1
+        bottom: 100%
+        padding: 5px 15px 5px 0px
+        
+        .open > .sub-menu
+            left: calc(100% + 15px)
+            bottom: -5px

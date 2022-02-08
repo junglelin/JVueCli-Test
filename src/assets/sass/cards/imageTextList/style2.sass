@@ -1,0 +1,192 @@
+
+$main-red: #dd2e5d
+$gray: #6b6b6b
+$darkgray: #494949
+
+.card-imageTextList[data-style="2"]
+    position: relative
+    max-width: 100%
+    margin: 60px auto
+    width: 1300px
+
+    .title-box
+        text-align: center
+        
+        .title
+            margin-bottom: 20px
+            position: relative
+            display: inline-block
+            width: auto
+            color: #494949
+            font-size: 3rem
+            font-weight: 600
+
+            &:before
+                content: ''
+                margin: 0 auto
+                margin-bottom: 10px
+                position: relative
+                display: block
+                width: 80px
+                height: 4px
+                background: #dd2e5d
+    
+    .tab
+        margin: 0 auto
+        position: relative
+        display: block
+        width: 60%
+        margin-bottom: 20px
+
+        +breakpoint(zone-nb-small)
+            width: 80%
+
+        ul
+            margin: 0 auto
+            display: inline-flex
+            justify-content: center
+            list-style: none
+            width: 100%
+
+            +breakpoint(mobile-landscape)
+                overflow-x: auto
+                justify-content: initial
+                padding-bottom: 15px
+
+            li
+                margin-bottom: 4px
+                display: inherit
+                justify-content: center
+                transition: .3s ease
+                float: left
+                text-align: center
+                transform: translateY(2px)
+
+                +breakpoint(zone-nb-small)
+                    margin: 0px 8px
+                    width: calc(25% - 16px)
+
+                +breakpoint(zone-base)
+                    margin: 0px
+                    width: 25%
+
+                +breakpoint(mobile-landscape)
+                    white-space: nowrap
+
+                &:hover
+                    color: #183578
+                    
+                a
+                    margin: 0 5px
+                    padding: 5px 0px 8px
+                    color: $darkgray
+                    font-size: 1.6rem
+                    text-decoration: none
+                    border-radius: 50px
+
+                    +breakpoint(zone-base)
+                        padding: 8px 0px
+                        font-size: 1.5rem
+
+                &.active
+                    a
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        padding: 0px 15px
+                        color: white
+                        background: $main-red
+
+    .swiper-for-pc
+        padding-bottom: 30px 
+        display: block
+        position: relative
+        overflow: hidden
+
+        &:after,
+        &:before
+            content: ''
+            position: absolute
+            top: 0
+            height: 100%
+            width: 12.5%
+            background-image: linear-gradient(90deg, white, transparent)
+            z-index: 9
+
+            +breakpoint(mobile-landscape)
+                display: none
+                    
+        &:after
+            right: 0
+            background-image: linear-gradient(270deg, white, transparent)
+
+        .swiper-slide
+            width: 25%
+
+            +breakpoint(pad-portrait)
+                width: 45%
+
+            +breakpoint(mobile-landscape)
+                width: calc(100% - 20px)
+
+        ::v-deep .swiper-pagination-bullets
+            bottom: 0px
+
+            .swiper-pagination-bullet
+                margin: 5px
+                width: 12px
+                height: 12px
+                cursor: pointer
+                background: #dd2e5d
+                opacity: 0.5
+
+            .swiper-pagination-bullet-active
+                opacity: 1
+                box-shadow: 0px 0px 0px 3px #fff, 0px 0px 0px 4px #dd2e5d
+
+    .pc-controller
+        position: absolute
+        top: 50%
+        width: 100%
+        +breakpoint(pad-portrait)
+            display: none
+
+        .swiper-button-prev,
+        .swiper-button-next
+            left: 50px
+            width: 50px
+            height: 50px
+            background: #ffffff
+            border-radius: 50px
+            transform: none
+            transition: none
+            box-shadow: 0px 3px 10px -6px rgba(black, 20%)
+            background-image: none
+            
+            &:after
+                margin-top: -20px
+                display: block
+                position: absolute
+                top: 40%
+                width: 100%
+                height: 40px
+                height: 20px
+                color: #dd2e5d
+                font-family: "FontCCWork"
+                line-height: 50px
+                font-size: 2rem
+                font-weight: bold
+                text-align: center
+        
+        .swiper-button-prev
+            left: 10px
+            
+            &:after
+                content: "\e905"
+            
+        .swiper-button-next
+            left: auto
+            right: 10px
+            
+            &:after
+                content: "\e907"

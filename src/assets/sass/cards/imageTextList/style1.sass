@@ -1,0 +1,284 @@
+$darkgray: #494949
+$main-red: #dd2e5d
+$nav_color: #4c4c4c
+$photoNth: 10 //圖片數量(一定要是5的倍數)
+$photoW: 205px  // 圖片寬度
+$photoH: 355px  // 圖片最高高度
+$photoSpace: 10px //圖片間距
+$scale: 1.2 //圖片縮小比例 (除數)
+
+%truncateBox-line-disable
+	text-overflow: ellipsis
+	-webkit-line-clamp: auto
+	line-height: 1.2
+	height: auto
+
+	+breakpoint(pad-portrait)
+		line-height: 1.2
+		height: auto
+
+%activeWrap-change
+	height: auto
+	width: 100%
+	top: auto
+	bottom: -100%
+	left: 0%
+	transform: none
+
+	.card-text
+		.card-text-box
+			position: relative
+			top: auto
+			left: auto
+			transform: none
+
+%activeWrap-change-hover
+	bottom: 0
+	transform: none
+
+$photoNth: 12 //圖片數量(一定要是4的倍數)
+$photoW: 380px //20vw //400px // 圖片寬度
+$photoH: 440px //24vw //464px // 圖片最高高度
+$photoSpace: 10px //圖片間距
+$scale: 1.2 //圖片縮小比例 (除數)
+
+// 文字行數顯示設定(行數, 行高)
+=truncateBox-line($QTY, $line-height)
+	overflow: hidden
+	text-overflow: ellipsis
+	display: -webkit-box
+	-webkit-box-orient: vertical
+	-webkit-line-clamp: $QTY //控制顯示行數
+	line-height: $line-height   //對不支持瀏覽器的
+	height: $line-height * $QTY //對不支持瀏覽器的彌補 行數*行高
+
+%truncateBox-line-disable
+	text-overflow: ellipsis
+	-webkit-line-clamp: auto
+	line-height: 1.2
+	height: auto
+
+	+breakpoint(pad-portrait)
+		line-height: 1.2
+		height: auto
+
+	.card-battle
+		width: 100%
+		overflow-x: auto
+		padding-bottom: 10px
+		&::-webkit-scrollbar
+			height: 12px
+			-webkit-border-radius: 10px
+		&::-webkit-scrollbar-track
+			-webkit-border-radius: 10px
+		&::-webkit-scrollbar-track:hover
+			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+		&::-webkit-scrollbar-thumb 
+			-webkit-border-radius: 10px
+			background: #ccc
+		.flex-container
+			display: flex
+			flex-direction: row
+			// width: ($photoW + $photoSpace) * ($photoNth / 4 * 3)
+			// height: $photoH
+			overflow-x: auto
+			overflow-y: hidden
+			// +breakpoint(pad-landscape)
+				// width: ($photoW / $scale + $photoSpace) * ($photoNth / 4 * 3)
+				// height: $photoH / $scale
+			div.card-imageText
+				// flex: 0 0 $photoW
+				// max-width: $photoW
+				// width: 100%
+				flex: 0 0 33%
+				margin-right: $photoSpace
+				// +breakpoint(pad-landscape)
+					// flex: 0 0 $photoW / $scale
+					// max-width: $photoW / $scale
+				img
+					height: 0
+					padding-top: 60%
+					// padding-top: ($photoH - $photoSpace) / 2
+					// +breakpoint(pad-landscape)
+						// padding-top: ($photoH / $scale - $photoSpace) / 2
+				.card-img-content
+					opacity: 1
+
+				.card-text-info
+					+truncateBox-line(3, 1.5em)
+					+breakpoint(pad-portrait)
+						+truncateBox-line(2, 1.5em)
+						
+				&:nth-of-type(4n + 1)
+					.card-text-info
+						+truncateBox-line(6, 1.5em)
+						+breakpoint(pad-portrait)
+							+truncateBox-line(4, 1.5em)
+					img
+						padding-top: 133%
+						// padding-top: $photoH
+						// +breakpoint(pad-landscape)
+						//     padding-top: $photoH / $scale
+
+				.activeWrap
+					&.img, &.video, &.audio
+						.card-text-info
+							@extend %truncateBox-line-disable
+							// +breakpoint(pad-portrait)
+								// @extend %truncateBox-line-disable
+						&:nth-of-type(4n + 1)
+							.card-text-info
+								@extend %truncateBox-line-disable
+								// +breakpoint(pad-portrait)
+									// @extend %truncateBox-line-disable
+
+				&:nth-of-type(4n + 4)
+					flex: 0 0 calc(66% + 10px)
+					// flex: 0 0 $photoW * 2 + $photoSpace
+					// max-width: $photoW * 2 + $photoSpace
+					align-self: flex-end
+					margin-left: calc(-66% - 20px)
+					// margin-left: -$photoW * 2 - $photoSpace * 2
+					// +breakpoint(pad-landscape)
+					//     flex: 0 0 $photoW / $scale * 2 + $photoSpace
+					//     max-width: $photoW / $scale * 2 + $photoSpace
+					//     margin-left: -$photoW / $scale * 2 - $photoSpace * 2
+					img
+						padding-top: calc(36% - 10px)
+	// more按鈕  
+	// cc 20181212 圖文卡組不會有more
+	// .pagination
+	//     position: absolute
+	//     top: 0
+	//     right: 0
+	//     transform: translateY(-100%) translateY(-20%)
+
+	//     +breakpoint(mobile-landscape)
+	//         position: relative
+	//         transform: translate(0,0)
+	//         margin-top: 20px
+	//         text-align: center
+	//     a.btn-black-o:link,.btn-black-o:link
+	//         border: none
+	//         font-size: 2.6rem
+	//         line-height: 1
+	//         color: #979797
+	//         +hover-focus
+	//             background-color: transparent
+	//             color: #00c2e2
+
+// 合作夥伴
+.card-partner
+	position: relative
+
+	.swiper-button-prev, 
+	.swiper-button-next
+		width: 40px
+		height: 40px
+		top: 50%
+		margin-top: -20px
+		border-radius: 100%
+		color: $white
+		text-align: center
+		@extend %transition-opacity
+		transition: 0.4s
+		
+		+breakpoint(mobile-landscape)
+			display: none
+
+		&:hover,
+		&:focus
+			transform: scale(1.2)
+
+		&::after
+			font-family: "FontCCWork"
+			display: block
+			position: absolute
+			width: size(100)
+			height: 40px
+			line-height: 50px
+			top: 40%
+			margin-top: -20px
+			font-size: 3rem
+			@extend %transition-opacity
+
+	.swiper-button-prev
+		transform: translateX(-100%)
+		&::after
+			content: unquote('"\\e905"')
+
+	.swiper-button-next
+		transform: translateX(100%)
+		&::after
+			content: unquote('"\\e907"')
+
+.card-partner
+	position: relative
+	width: 1300px
+	max-width: 100%
+	margin: 0 auto 105px
+
+	.title-box
+		margin-bottom: 35px
+		display: inline-flex
+		justify-content: center
+		width: 100%
+
+		.title-main
+			margin: 0 auto
+			position: relative
+			display: block
+			color: $darkgray
+			font-size: 3rem
+			font-weight: 600
+			text-align: center
+
+			&:before
+				content: ''
+				position: absolute
+				top: -10px
+				left: 50%
+				width: 80px
+				height: 3px
+				background: $main-red
+				transform: translateX(-50%)
+
+	.swiper-container:after,
+	.swiper-container:before
+		content: ''
+		position: absolute
+		top: 0
+		height: 100%
+		width: 10.28%
+		z-index: 2
+
+	.swiper-container:after
+		background-image: linear-gradient(to right, white, transparent)
+
+	.swiper-container:before
+		right: 0
+		background-image: linear-gradient(to left, white, transparent)
+
+	.swiper-button-prev,
+	.swiper-button-next
+		left: 10px
+		width: 50px
+		height: 50px
+		background: #ffffff
+		border-radius: 50px
+		transform: none
+		box-shadow: 0px 3px 10px -3px rgba(black, 0.2)
+
+		&:after
+			color: $main-red
+			font-size: 2rem
+			height: 20px
+			font-weight: bold
+
+	.swiper-button-next
+		left: auto
+		right: 10px
+
+
+
+

@@ -1,0 +1,381 @@
+
+$main-red: #dd2e5d
+$gray: #6b6b6b
+$darkgray: #494949
+
+.card-imageText[data-style="2"]
+    overflow: hidden
+    background-color: white
+    display: flex
+    flex-wrap: wrap
+
+    .card.shadow-none
+        width: 100%
+
+    .card-box[onclick]
+        cursor: pointer
+    
+    .card-box
+        margin: 10px
+        filter: drop-shadow(0px 0px 5px rgba(#000, .1))
+        background: #ffffff
+
+    .flex-box
+        display: flex
+        flex-wrap: wrap
+        .card.shadow-none
+            width: 50%
+
+    .card-img
+        padding-bottom: 66.66%
+        z-index: 1
+        overflow: initial
+
+        .cc-tools
+            position: absolute
+            z-index: 2
+            top: 0px
+            left: 5px
+            .fire,
+            .good
+                display: none
+                +breakpoint(pad-landscape)
+                    display: inline-block
+
+        img
+            width: size(100)
+
+        .videoCurrentBoxShow, .videoCurrentBox
+            position: absolute
+            width: 100%
+            height: 100%
+            top: 0%
+            left: 0%
+            z-index: 3
+
+            > a
+                width: 60px
+                height: 60px
+                line-height: 60px
+                font-size: 4.0rem
+                position: absolute
+                z-index: 2
+                right: 0
+                color: $white
+
+            > iframe
+                position: absolute
+                height: 100%
+                top: 0
+                left: 0
+                width: 100%
+
+            ~ img
+                -webkit-filter: blur(15px)
+                filter: blur(15px)
+
+        +hover-focus
+            .card-img-content
+                background-color: rgba($white, 0.3)
+
+        &.openVideoImg
+            .activeWrap
+                background: linear-gradient(0deg, $black 43.75%, rgba(64, 57, 153, 0) 43.75%)
+
+                &::after
+                    content: ""
+                    display: block
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                    background: linear-gradient(0deg, $black 0%, rgba(64, 57, 153, 0) 70%)
+
+    .card-img-content
+        opacity: 1
+        background-color: transparent
+        z-index: -1
+
+        &.desktop
+            display: block
+
+            +breakpoint(mobile-landscape)
+                display: none
+
+        &.mobile
+            display: none
+
+            +breakpoint(mobile-landscape)
+                display: block
+
+    .avator
+        position: relative
+        width: 48px
+
+        .img
+            position: relative
+            left: 5px
+            top: 5px
+            padding-bottom: 100%
+            background-repeat: no-repeat
+            background-size: cover
+            border-radius: 50px
+
+            &.desktop
+                display: block
+
+                +breakpoint(mobile-landscape)
+                    display: none
+
+            &.mobile
+                display: none
+
+                +breakpoint(mobile-landscape)
+                    display: block  
+
+    .card-text
+        padding: 6.74px 10px 3.75px
+        max-width: 100%
+
+        .card-text-name
+            color: $darkgray
+            font-size: 1.8rem
+            font-weight: 500
+            line-height: normal
+            overflow: hidden
+            text-overflow: ellipsis
+            display: -webkit-box
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+
+        .date
+            font-size: 1.6rem
+            color: $darkgray
+
+    .card-text-name
+        color: #231916
+        margin-bottom: 5px
+        display: flex
+        align-items: flex-start
+
+        a
+            color: $white
+
+            @extend %reset
+
+            +hover-focus-active
+                color: $white
+        span
+            width: 100%
+
+            &.map
+                width: 25%
+                display: none
+                text-align: right
+                +breakpoint(pad-landscape)
+                    font-size: 1.2rem
+                    display: inline
+                    color: #9b9b9b
+
+    .feature
+        position: absolute
+        left: -6px
+        top: 10px
+        display: inline-flex
+        flex-direction: column
+        span.item
+            margin-bottom: 10px
+            position: relative
+            display: inline-block
+            background: #d25050
+            p
+                position: relative
+                padding: 5px 27px 5px 25px 
+                color: #ffffff
+                &:after
+                    content: ""
+                    position: absolute
+                    right: -10px
+                    top: 0
+                    border-width: 7.5px 5px
+                    border-style: solid
+                    border-color: #d25050 transparent transparent #d25050
+                &:before
+                    content: ""
+                    position: absolute
+                    right: -10px
+                    bottom: 0
+                    border-width: 7.5px 5px
+                    border-style: solid
+                    border-color: transparent transparent #d25050 #d25050
+                    
+            &:after
+                content: ""
+                position: absolute
+                left: 0px
+                bottom: -6px
+                border-width: 3px
+                border-style: solid
+                border-color: #6d0000 #6d0000 transparent transparent
+            
+            &.recommend
+                background: #266cb9
+                p:after
+                    border-color: #266cb9 transparent transparent #266cb9
+                p:before
+                    border-color: transparent transparent #266cb9 #266cb9 
+                &:after
+                    border-color: #103962 #103962 transparent transparent
+
+    .like
+        display: inline-block
+        position: absolute
+        right: 8px
+        top: 8px
+
+        a
+            display: inline-flex
+            text-align: center
+            font-size: 2rem
+            width: 20px
+            height: 20px
+            text-decoration: none
+            justify-content: center
+            align-items: center
+            color: white
+            i
+                vertical-align: middle
+        
+        &:hover
+            a
+                color: $main-red
+        
+        &.active
+            a
+                color: $main-red
+
+
+    .card-text-info
+        font-size: 1.2rem
+        color: #9b9b9b
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        margin-bottom: 7px
+
+        .star
+            margin: 4px 0
+            color: #dddddd
+            font-size: 1.4rem
+
+            +breakpoint(pad-landscape)
+                font-size: 1.2rem
+                margin: 3px 0
+
+            i
+                letter-spacing: -0.2rem
+
+            .cc-star-full
+                color: $main-red
+
+                &.unchosen
+                    color: #dddddd
+
+        a
+            color: $white
+            text-decoration: none
+
+    .teacher
+        display: flex
+
+        .title
+            padding-left: 10px
+            margin-right: 10px
+            position: relative
+            color: black
+            font-size: 1.6rem
+            font-weight: 500
+
+            &:before
+                content: ''
+                position: absolute
+                left: 0
+                width: 3px
+                height: 100%
+                background: $main-red
+
+        .content
+            color: $darkgray
+
+    .price
+        margin-bottom: 8px
+        color: $main-red
+        width: 100%
+        font-size: 1.8rem
+        text-align: right
+        
+        +breakpoint(pad-landscape)
+            font-size: 1.8rem
+
+    .more
+        padding: 0px 10px
+        display: inline-block
+        width: 100%
+        text-align: center
+        transition: all .3s
+
+        a
+            padding: 5px 0
+            display: inline-block
+            width: 100%
+            color: $main-red
+            font-size: 1.4rem
+            font-weight: 500
+            letter-spacing: 1.3px
+            text-decoration: unset
+            border-top: 1px solid $main-red
+
+        &:hover
+            background: $main-red
+
+            a
+                color: #ffffff
+
+        
+
+
+    .imgInfo
+        position: absolute
+        left: 50%
+        bottom: calc(40% + 10px)
+        margin: 0 auto
+        z-index: 1
+        transition: 0.4s all ease-in-out
+        cursor: pointer
+        transform: translate(-50%,0)
+
+        > span
+            font-size: 1.6rem
+            color: $white
+            display: inline-block
+            width: 30px
+            height: 30px
+            text-align: center
+            line-height: 32px
+            border-radius: 100%
+            border: 1px solid $white
+            background-color: rgba($black, 0.3)
+
+            > i
+                margin-left: 2px
+
+
+
+.jw-flag-audio-player
+    .jw-controlbar-center-group
+        padding: 0 1em 0 0em
+
+    .jw-slider-time.jw-slider-horizontal
+        line-height: 1
+
+    .jw-slider-volume.jw-slider-horizontal
+        line-height: 21px

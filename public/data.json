@@ -1,0 +1,134 @@
+{
+    "menu": [
+        {
+            "menuId": 1,
+            "menuName": "一級選單",
+            "parentMenuId": 0,
+            "name": "t1",
+            "component": "",
+            "url": "t1",
+            "type": 1,
+            "icon": "el-icon-wind-power",
+            "orderIndex": 1,
+            "children": [
+            ]
+        },
+        {
+            "menuId": 2,
+            "menuName": "一級選單",
+            "parentMenuId": 0,
+            "name": "t2",
+            "component": "",
+            "url": "t2",
+            "type": 1,
+            "icon": "el-icon-ice-cream-round",
+            "orderIndex": 1,
+            "children": [
+                {
+                    "menuId": 21,
+                    "menuName": "二級1-1",
+                    "parentMenuId": 3,
+                    "name": "t21",
+                    "component": "",
+                    "url": "t21",
+                    "type": 2,
+                    "icon": "el-icon-milk-tea",
+                    "orderIndex": 1,
+                    "children": [
+                    ]
+                },
+                {
+                    "menuId": 22,
+                    "menuName": "二級1-2",
+                    "parentMenuId": 3,
+                    "name": "t22",
+                    "component": "",
+                    "url": "t22",
+                    "type": 2,
+                    "icon": "el-icon-potato-strips",
+                    "orderIndex": 2,
+                    "children": [
+                    ]
+                },
+                {
+                    "menuId": 23,
+                    "menuName": "二級1-3",
+                    "parentMenuId": 3,
+                    "name": "t23",
+                    "component": "",
+                    "url": "t23",
+                    "type": 2,
+                    "icon": "el-icon-lollipop",
+                    "orderIndex": 3,
+                    "children": [
+                    ]
+                }
+            ]
+        },
+        {
+            "menuId": 3,
+            "menuName": "一級選單",
+            "parentMenuId": 0,
+            "name": "t3",
+            "component": "",
+            "url": "t3",
+            "type": 1,
+            "icon": "el-icon-ice-cream-round",
+            "orderIndex": 1,
+            "children": [
+                {
+                    "menuId": 31,
+                    "menuName": "二級1-1",
+                    "parentMenuId": 4,
+                    "name": "t31",
+                    "component": "",
+                    "url": "t31",
+                    "type": 2,
+                    "icon": "el-icon-milk-tea",
+                    "orderIndex": 1,
+                    "children": [
+                    ]
+                },
+                {
+                    "menuId": 32,
+                    "menuName": "二級1-2",
+                    "parentMenuId": 4,
+                    "name": "t32",
+                    "component": "",
+                    "url": "t32",
+                    "type": 2,
+                    "icon": "el-icon-potato-strips",
+                    "orderIndex": 2,
+                    "children": [
+                        {
+                            "menuId": 321,
+                            "menuName": "三級1-2-1",
+                            "parentMenuId": 402,
+                            "name": "t321",
+                            "component": "",
+                            "url": "t321",
+                            "type": 2,
+                            "icon": "el-icon-milk-tea",
+                            "orderIndex": 1,
+                            "children": [
+                            ]
+                        },
+                        {
+                            "menuId": 322,
+                            "menuName": "三級1-2-2",
+                            "parentMenuId": 402,
+                            "name": "t322",
+                            "component": "",
+                            "url": "t322",
+                            "type": 2,
+                            "icon": "el-icon-potato-strips",
+                            "orderIndex": 2,
+                            "children": [
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
